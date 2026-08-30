@@ -133,28 +133,12 @@ const statusConfig = {
   error: { label: 'Error', variant: 'danger' as const, icon: <AlertTriangle className="w-3 h-3" /> },
 }
 
-// ─── Mini performance sparkline ──────────────────────────────────────────────
-const MiniSparkline: React.FC<{ data: number[]; color: string }> = ({ data, color }) => {
-  const max = Math.max(...data)
-  const min = Math.min(...data)
-  const range = max - min || 1
-  const w = 80
-  const h = 24
-  const points = data
-    .map((v, i) => `${(i / (data.length - 1)) * w},${h - ((v - min) / range) * (h - 4) - 2}`)
-    .join(' ')
-  return (
-    <svg width={w} height={h} className="overflow-visible">
-      <polyline points={points} fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
-    </svg>
-  )
-}
+
 
 // ─── Expandable model card ───────────────────────────────────────────────────
 const ModelCard: React.FC<{ model: ModelData; index: number }> = ({ model, index }) => {
   const [expanded, setExpanded] = useState(false)
   const status = statusConfig[model.status]
-  const sparkData = Array.from({ length: 12 }, () => 80 + Math.random() * 20)
 
   return (
     <motion.div
