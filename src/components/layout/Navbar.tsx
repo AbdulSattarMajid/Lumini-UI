@@ -63,7 +63,7 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
           <ThemeSwitcher />
           <Link to="/dashboard">
             <Button
@@ -126,21 +126,36 @@ export const Navbar: React.FC = () => {
                 </a>
               ))}
             </div>
-            <div className="pt-3 border-t border-slate-800/80 flex items-center gap-2">
-              <ThemeSwitcher />
-              <Button
-                variant="glow"
-                size="sm"
-                className="flex-1"
-                rightIcon={<ArrowRight className="w-4 h-4" />}
-                onClick={() => {
-                  setMobileMenuOpen(false)
-                  const playground = document.getElementById('playground')
-                  playground?.scrollIntoView({ behavior: 'smooth' })
-                }}
-              >
-                Explore Kit
-              </Button>
+            <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-3">
+              <div className="flex items-center justify-between px-3">
+                <span className="text-sm font-medium text-slate-300">Theme</span>
+                <ThemeSwitcher />
+              </div>
+              <div className="flex flex-col gap-2 px-3">
+                <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" size="sm" className="w-full justify-center">
+                    Dashboard
+                  </Button>
+                </Link>
+                <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" size="sm" className="w-full justify-center">
+                    Sign In
+                  </Button>
+                </Link>
+                <Button
+                  variant="glow"
+                  size="sm"
+                  className="w-full justify-center mt-1"
+                  rightIcon={<ArrowRight className="w-4 h-4" />}
+                  onClick={() => {
+                    setMobileMenuOpen(false)
+                    const playground = document.getElementById('playground')
+                    playground?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  Explore Kit
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
