@@ -24,7 +24,7 @@ export const AuthPage: React.FC = () => {
       className="min-h-screen flex bg-slate-950 text-slate-100"
     >
       {/* Left Column: Auth Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 xl:px-32 relative z-10">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 sm:px-16 lg:px-24 xl:px-32 py-24 relative z-10">
         {/* Back Link */}
         <div className="absolute top-8 left-8 sm:left-16 lg:left-24">
           <Link to="/" className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-2 group">
