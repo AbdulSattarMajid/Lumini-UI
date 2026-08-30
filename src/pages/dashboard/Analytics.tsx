@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
-  BarChart2,
   TrendingUp,
   TrendingDown,
   ArrowUpRight,
@@ -9,13 +8,8 @@ import {
   Users,
   Globe,
   Zap,
-  Clock,
-  Eye,
-  MousePointerClick,
   Activity,
-  Calendar,
   Layers,
-  Target,
   Server,
   Wifi,
 } from 'lucide-react'
@@ -23,7 +17,6 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 
 // ─── Chart components ────────────────────────────────────────────────────────
-
 /** Area chart with gradient fill */
 const AreaChart: React.FC<{
   data: number[]
@@ -249,7 +242,6 @@ export const Analytics: React.FC = () => {
   const [timeRange, setTimeRange] = useState<'24h' | '7d' | '30d' | '90d'>('7d')
 
   // Mock data sets
-  const revenueData = [4200, 3800, 5100, 4600, 6200, 5800, 7100, 6700, 7800, 8200, 7600, 9100]
   const requestsData = [12000, 15000, 13500, 18000, 16500, 21000, 19500, 23000, 22000, 26000, 24500, 28000]
   const latencyData = [42, 38, 45, 35, 40, 32, 44, 36, 30, 38, 34, 28]
   const monthLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -269,11 +261,10 @@ export const Analytics: React.FC = () => {
               <button
                 key={range}
                 onClick={() => setTimeRange(range)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  timeRange === range
-                    ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                    : 'text-slate-400 hover:text-slate-200'
-                }`}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${timeRange === range
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
+                  : 'text-slate-400 hover:text-slate-200'
+                  }`}
               >
                 {range}
               </button>

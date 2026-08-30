@@ -6,25 +6,19 @@ import {
   FileText,
   FileSpreadsheet,
   Search,
-  Filter,
-  Plus,
   Download,
   Trash2,
   Eye,
-  MoreHorizontal,
   HardDrive,
-  Clock,
   CheckCircle2,
-  AlertCircle,
   ArrowUpRight,
   ArrowDownRight,
-  TrendingUp,
   Database,
   Upload,
   RefreshCw,
   Tag,
 } from 'lucide-react'
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
+import { Card, CardTitle } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 
@@ -143,8 +137,8 @@ const statusConfig = {
 const QualityBar: React.FC<{ score: number }> = ({ score }) => {
   const color =
     score >= 90 ? 'bg-emerald-500' :
-    score >= 70 ? 'bg-amber-500' :
-    'bg-rose-500'
+      score >= 70 ? 'bg-amber-500' :
+        'bg-rose-500'
 
   return (
     <div className="flex items-center gap-2">
@@ -198,7 +192,6 @@ const StorageBar: React.FC = () => {
 // ═════════════════════════════════════════════════════════════════════════════
 export const Datasets: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('')
-  const [viewMode, setViewMode] = useState<'table' | 'grid'>('table')
 
   const filtered = DATASETS.filter(
     (d) =>

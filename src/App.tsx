@@ -8,6 +8,7 @@ import { Models } from '@/pages/dashboard/Models'
 import { Datasets } from '@/pages/dashboard/Datasets'
 import { Analytics } from '@/pages/dashboard/Analytics'
 import { Settings } from '@/pages/dashboard/Settings'
+import { MarketingCover } from '@/pages/MarketingCover'
 import { CustomCursor } from '@/components/ui/CustomCursor'
 import { ThemeProvider } from '@/lib/ThemeContext'
 

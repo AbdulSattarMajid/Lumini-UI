@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   BrainCircuit,
-  Sparkles,
-  TrendingUp,
-  Clock,
   Cpu,
   Download,
   MoreHorizontal,
@@ -13,16 +10,14 @@ import {
   CheckCircle2,
   AlertTriangle,
   ChevronDown,
-  ChevronUp,
   Search,
   Filter,
   Plus,
   Layers,
   Activity,
-  Zap,
   GitBranch,
 } from 'lucide-react'
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
+import { Card,  CardContent } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 

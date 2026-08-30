@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Settings as SettingsIcon,
   User,
   Shield,
   Bell,
@@ -27,7 +26,7 @@ import {
   RefreshCw,
   Zap,
 } from 'lucide-react'
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
+import { Card, CardContent } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 
